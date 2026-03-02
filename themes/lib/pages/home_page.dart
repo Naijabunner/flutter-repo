@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:themes/components/box.dart';
 import 'package:themes/components/button.dart';
+import 'package:themes/theme/theme.provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,7 +15,9 @@ class HomePage extends StatelessWidget {
         child: MyBox(
           color: Theme.of(context).colorScheme.primary,
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+            },
             child: MyButton(
               color: Theme.of(context).colorScheme.secondary,
               text: "Tap Me",

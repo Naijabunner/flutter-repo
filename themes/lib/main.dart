@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:themes/pages/home_page.dart';
-import 'package:themes/theme/theme.dart';
+import 'package:provider/provider.dart';
+import 'package:themes/theme/theme.provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,8 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
-      theme: lightTheme,
-      darkTheme: darkTheme,
+      theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }
