@@ -1,0 +1,6 @@
+Analyzing learning_app...                                       
+
+   info • Don't invoke 'print' in production code • lib/main.dart:11:3 • avoid_print
+   info • Don't invoke 'print' in production code • lib/main.dart:20:5 • avoid_print
+
+2 issues found. (ran in 3.1s)
