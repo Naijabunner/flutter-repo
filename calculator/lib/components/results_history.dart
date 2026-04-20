@@ -7,7 +7,7 @@ class ResultsHistory extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(width: double.infinity, height: 300),
+        Container(width: double.infinity, height: 300, child: Text("History")),
 
         Positioned(top: 1, left: 2, child: HistoryButton()),
       ],

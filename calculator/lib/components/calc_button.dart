@@ -4,10 +4,12 @@ class CalcButton extends StatelessWidget {
   final String text;
   final Color color;
   final int flex;
+  final void Function()? onPressed;
 
   const CalcButton({
     super.key,
     required this.text,
+    required this.onPressed,
     this.color = Colors.grey,
     this.flex = 1,
   });
@@ -24,7 +26,7 @@ class CalcButton extends StatelessWidget {
             shape: const StadiumBorder(),
             padding: const EdgeInsets.all(20),
           ),
-          onPressed: () {},
+          onPressed: onPressed,
           child: Text(text, style: const TextStyle(fontSize: 24)),
         ),
       ),

@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:todoapp/screens/home_page.dart';
 import 'package:provider/provider.dart';
 import 'package:todoapp/themes/theme.provider.dart';
+import 'package:todoapp/core/constants/providers.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => ThemeProvider(),
+    MultiProvider(
+      providers: providers,
       child: const MyApp(), // MyApp is now UNDER the provider
     ),
   );
